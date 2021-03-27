@@ -12,45 +12,29 @@ import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [StarListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class StarListFragment : Fragment() {
+class StarryFragment: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         return ComposeView(requireContext()).apply {
             setContent {
-
                 Column(modifier = Modifier.padding(16.dp)) {
 
-                    Text(
-                        text = "Star List",
-                        style = TextStyle(fontSize = 21.sp),
-
-                    )
-
+                    Text(text = "Starry Fragment",
+                    style = TextStyle(fontSize = 21.sp))
+                    
                     Spacer(modifier = Modifier.padding(16.dp))
-
-                    Button(onClick = {findNavController().navigate(R.id.action_starListFragment_to_starryFragment)}) {
-                        Text(text = "To Starry Fragment!")
+                    
+                    Button(onClick = {findNavController().navigate(R.id.action_starryFragment_to_starListFragment)}) {
+                        Text(text = "Back to Star List!")
                     }
                 }
             }

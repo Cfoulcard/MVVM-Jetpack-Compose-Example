@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/starListFragment">
+
+    <fragment
+        android:id="@+id/starListFragment"
+        android:name="com.example.mvvm_example.StarListFragment"
+        android:label="StarListFragment"
+        tools:layout="@layout/fragment_star_list" >
+        <action
+            android:id="@+id/action_starListFragment_to_starryFragment"
+            app:destination="@id/starryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/starryFragment"
+        android:name="com.example.mvvm_example.StarryFragment"
+        android:label="StarryFragment"
+        tools:layout="@layout/starry_fragment">
+    <action
+        android:id="@+id/action_starryFragment_to_starListFragment"
+        app:destination="@id/starListFragment" />
+    </fragment>
+
+
+</navigation>
